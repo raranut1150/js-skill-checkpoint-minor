@@ -1,7 +1,21 @@
 // Question #1: Shipping Cost Calculator
 
-function calculateShippingCost() {
+function calculateShippingCost(orders) {
   // เริ่มเขียนโค้ดตรงนี้
+  const res = [];
+  for (const order of orders) {
+    const orderTotal = order.total
+    if (orderTotal >= 6000) {
+      res.push(`Order ${order.orderId}: Shipping is free.`)
+    }
+    else if (orderTotal >= 3000) {
+      res.push(`Order ${order.orderId}: Shipping cost is 250.`)
+    }
+    else {
+      res.push(`Order ${order.orderId}: Shopping cost is 500.`)
+    }
+  }
+  return res
 }
 
 // ตัวอย่างการใช้งาน
